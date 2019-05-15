@@ -1,4 +1,4 @@
-module taildir
+module github.com/dmirubtsov/taildir
 
 go 1.12
 

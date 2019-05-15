@@ -54,6 +54,10 @@ func watchDir(dirPath string) *watcher.Watcher {
 		log.Fatalln(err)
 	}
 
+	for path := range w.WatchedFiles() {
+		go createFollower(path)
+	}
+
 	if err := w.Start(time.Millisecond * 100); err != nil {
 		log.Fatalln(err)
 	}
@@ -68,7 +72,7 @@ func createFollower(filePath string) {
 
 	f, err := follower.New(filePath, follower.Config{
 		Whence: io.SeekEnd,
-		Offset: 1,
+		Offset: 0,
 		Reopen: false,
 	})
 
