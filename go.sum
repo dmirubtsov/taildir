@@ -1,0 +1,8 @@
+github.com/fsnotify/fsnotify v1.4.7 h1:IXs+QLmnXW2CcXuY+8Mzv/fWEsPGWxqefPtCP5CnV9I=
+github.com/fsnotify/fsnotify v1.4.7/go.mod h1:jwhsz4b93w/PPRr/qN1Yymfu8t87LnFCMoQvtojpjFo=
+github.com/papertrail/go-tail v0.0.0-20180509224916-973c153b0431 h1:i1egM7gz4bPxLCIwBJOkpk6TqHpjTnL4dE1xdN/4dcs=
+github.com/papertrail/go-tail v0.0.0-20180509224916-973c153b0431/go.mod h1:dMID0RaS2a5rhpOjC4RsAKitU6WGgkFBZnPVffL69b8=
+github.com/radovskyb/watcher v1.0.6 h1:8WIQ9UxEYMZjem1OwU7dVH94DXXk9mAIE1i8eqHD+IY=
+github.com/radovskyb/watcher v1.0.6/go.mod h1:78okwvY5wPdzcb1UYnip1pvrZNIVEIh/Cm+ZuvsUYIg=
+golang.org/x/sys v0.0.0-20190515120540-06a5c4944438 h1:khxRGsvPk4n2y8I/mLLjp7e5dMTJmH75wvqS6nMwUtY=
+golang.org/x/sys v0.0.0-20190515120540-06a5c4944438/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
