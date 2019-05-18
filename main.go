@@ -76,7 +76,7 @@ func createFollower(filePath string) {
 		Reopen: false,
 	})
 
-	if f.Err() != nil {
+	if err != nil {
 		log.Fatal(err)
 	}
 
