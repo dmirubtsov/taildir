@@ -3,32 +3,55 @@ taildir
 
 Tailing logs from directories recursively.
 
+Installation
+
+```
+go get github.com/dmirubtsov/taildir
+```
+
 Usage
 ------------------------------
+
+Useful as sidekiq kubernetes container that watch emptyDir with logs and write it to container stdout.
 
 ```
 $ taildir dir1 [dir2 ...]
 ```
 
-### Demo
+Kubernetes example:
 
-[![asciicast](https://asciinema.org/a/FPqA0gaBhJvX2mdJQVAk9uBEw.svg)](https://asciinema.org/a/FPqA0gaBhJvX2mdJQVAk9uBEw)
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+  labels:
+    app: myapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: myapp:1.3.37
+        volumeMounts:
+          - name: logs
+            mountPath: /app/storage/logs
+      - name: logger
+        image: mazy/taildir:latest
+        args: ["/app/storage/logs"]
+        volumeMounts:
+          - name: logs
+            mountPath: /app/storage/logs
+      volumes:
+        - name: logs
+          emptyDir: {}
 
-1. Preparation for demo
+```
 
-    ```sh
-    $ while :; do echo "example of new log entry in logdir1" >> logdir1/log.log; sleep 1; done
-    $ while :; do echo "example of new log entry in logdir2" >> logdir2/log.log; sleep 1; done
-    ```
-
-2. Run
-
-    ```
-    $ taildir logdir1 logdir2
-    ```
-
-3. Installation
-
-   ```
-   go get github.com/dmirubtsov/taildir
-   ```
