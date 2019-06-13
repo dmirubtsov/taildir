@@ -1,6 +1,9 @@
 taildir
 ==============================
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/dmirubtsov/taildir)](https://goreportcard.com/report/github.com/dmirubtsov/taildir)
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/mazy/taildir.svg)](https://cloud.docker.com/repository/docker/mazy/taildir)
+
 Tailing logs from directories recursively.
 
 Installation
